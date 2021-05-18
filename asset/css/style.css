@@ -1,0 +1,50 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    width: 1110px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #3f4e77;
+} 
+.container > h1
+{
+    position: absolute;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.container h1 span
+{
+    color: #ff1111;
+    margin: 0 5px;
+}
+#app
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app > img
+{
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    padding: 0.25rem;
+    border: groove 3px #fff;
+}
+
+.prev, .next
+{
+    font-size: 3rem;
+    margin: 0 1rem;
+    color: #d6d8cd;
+}

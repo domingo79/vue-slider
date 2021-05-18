@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2c30adbff5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <title>Slider</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>I <span>❤</span> Puglia</h1>
+
+        <div id="app">
+
+            <div class="prev" @click="prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+
+            <img :src="images[counter]" alt="">
+
+            <div class="next" @click="next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./asset/app.js/app.js"></script>
+</body>
+
+</html>
