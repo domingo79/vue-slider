@@ -40,6 +40,7 @@ const app = new Vue({
             return this.index += 1;
         },
         changeImage(index) {
+            //console.log(index + ' attiva');
             return this.index = index;
         }
     },
