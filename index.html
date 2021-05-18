@@ -19,15 +19,23 @@
         <div id="app">
 
             <div class="prev" @click="prev">
+
                 <i class="fas fa-chevron-left"></i>
             </div>
 
-            <img :src="images[counter]" alt="">
+            <div class="carosel">
+                <img :src="images[index]" alt="">
+                <ul class="controls">
+                    <li class="dot" v-for="(image, imageIndex) in images" :class="{ active : index === imageIndex }"
+                        @click='changeImage(imageIndex)'>
+                    </li>
+                </ul>
+
+            </div>
 
             <div class="next" @click="next">
                 <i class="fas fa-chevron-right"></i>
             </div>
-
 
         </div>
 

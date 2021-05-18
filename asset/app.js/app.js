@@ -1,7 +1,19 @@
+/*
+1. Creare uno slider di immagini: potete usare le immagini che desiderate.
+2. Lo slider prevederà due frecce (icone) che permettono di scorrere tra le immagini dello slider
+3.Inoltre per scorrere le immagini permettere anche l’uso delle frecce sinistra e destra della tastiera (usate un event listener su document e ascoltate per il keyup)
+Utiliziamo una classe first e last per capire quali sono la prima e ultima immagine dello slider
+Utilizziamo una classe active per aiutarci a capire quale è l’immagine attuale da visualizzare nello slider
+Clicchiamo sui pallini e mostriamo l’immagine corrispondente
+Bonus:
+Applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente (usate created o mounted!).
+*/
+
+
 const app = new Vue({
     el: '#app',
     data: {
-        counter: 0,
+        index: 0,
         images: [
             './asset/img/puglia-1.jpg',
             './asset/img/puglia-2.jpg',
@@ -13,20 +25,33 @@ const app = new Vue({
     },
     methods: {
         prev() {
-            console.log('prev');
-            if (this.counter === 0) {
-                return this.counter = this.images.length - 1
+            //console.log('prev');
+            if (this.index === 0) {
+                return this.index = this.images.length - 1
             }
-            return this.counter -= 1;
+            return this.index -= 1;
 
         },
         next() {
-            console.log('next');
-            if (this.counter === this.images.length - 1) {
-                return this.counter = 0
+            //console.log('next');
+            if (this.index === this.images.length - 1) {
+                return this.index = 0
             }
-            return this.counter += 1;
+            return this.index += 1;
+        },
+        changeImage(index) {
+            return this.index = index;
         }
+
     }
 
+});
+
+document.addEventListener('keyup', (ev) => {
+    // console.log(ev);
+    if (ev.code === 'ArrowRight') {
+        app.prev();
+    } else if (ev.code === 'ArrowLeft') {
+        app.next();
+    }
 })
