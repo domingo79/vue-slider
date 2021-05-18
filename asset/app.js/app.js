@@ -42,10 +42,14 @@ const app = new Vue({
         changeImage(index) {
             return this.index = index;
         }
+    },
 
+    mounted() {
+        setInterval(this.next, 3000);
     }
 
 });
+
 
 document.addEventListener('keyup', (ev) => {
     // console.log(ev);
