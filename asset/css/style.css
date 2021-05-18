@@ -4,24 +4,42 @@
     padding: 0;
     box-sizing: border-box;
 }
+body
+{
+    background: rgb(114, 102, 93) url('/asset/img/sfondo.jpg');
+    background-attachment: fixed;
+    background-blend-mode: hard-light
+}
 .container
 {
-    width: 85%;
+    /* width: 85%;
     height: 100vh;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3f4e77;
+    background-color: #3f4e77; */
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+    right: 180px;
+    left: 180px;
+    /* background: url('/buonCompleanno/asset/img/sfondo.jpeg'); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.7);
 } 
 .container > h1
 {
     position: absolute;
+    top: 30px;
     display: flex;
     justify-content: center;
-    top: 50px;
     letter-spacing: 5px;
     color: #fff;
+    font-size: 3rem;
 }
 .container h1 span
 {
@@ -38,31 +56,38 @@
 .prev, .next
 {
     font-size: 3rem;
-    margin: 0 1rem;
+    margin: 0 3rem;
     color: #d6d8cd;
 }
 .carosel
 {
 margin-top: 3rem;
+text-align: center;
 }
 .carosel > img
 {
-    width: 600px;
+    width: 900px;
     height: 400px;
     object-fit: cover;
-    padding: 0.25rem;
+    padding: 1.25rem;
     border: groove 3px #fff;
 }
 .controls
 {
+    width: 100%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-
+    justify-content: space-evenly;
 }
 .dot
 {
     color: rgb(250, 250, 250);
     font-size: 3rem;
-    margin: 1rem 2rem;
+    margin: 0 1rem;
     list-style: circle;
+}
+.dot.active
+{
+    color: #fff;
+    list-style: disc;
 }
