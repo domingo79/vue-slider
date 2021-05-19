@@ -46,17 +46,17 @@ const app = new Vue({
     },
 
     mounted() {
+        document.addEventListener('keyup', (ev) => {
+            //console.log(ev);
+            if (ev.key === 'ArrowRight') {
+                app.prev();
+            } else if (ev.key === 'ArrowLeft') {
+                app.next();
+            }
+        })
         setInterval(this.next, 3000);
     }
 
 });
 
 
-document.addEventListener('keyup', (ev) => {
-    // console.log(ev);
-    if (ev.code === 'ArrowRight') {
-        app.prev();
-    } else if (ev.code === 'ArrowLeft') {
-        app.next();
-    }
-})
